@@ -237,10 +237,7 @@ k <-   ComplexHeatmap::pheatmap(rld_sign, scale="row",
 k_drawn <- ComplexHeatmap::draw(k)
 
 cluster_indices_list <- ComplexHeatmap::row_order(k_drawn)
-
 all_gene_names <- rownames(rld_sign)
-
-# 5. Map the indices to the gene names
 cluster_gene_list <- lapply(cluster_indices_list, function(indices) {
   all_gene_names[indices]
 })
