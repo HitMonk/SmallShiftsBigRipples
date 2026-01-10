@@ -236,11 +236,8 @@ k <-   ComplexHeatmap::pheatmap(rld_sign, scale="row",
                                 clustering_method = "complete",border_color = FALSE)
 k_drawn <- ComplexHeatmap::draw(k)
 
-# 3. Extract the row order from the *drawn object*
-#    This will no longer produce a warning.
 cluster_indices_list <- ComplexHeatmap::row_order(k_drawn)
 
-# 4. Get the gene names from your original data
 all_gene_names <- rownames(rld_sign)
 
 # 5. Map the indices to the gene names
